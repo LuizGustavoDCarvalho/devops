@@ -66,12 +66,6 @@ jobs:
         name: test report
         path: ci/target/site/
 
-
-    - name: Install Mail Utilities
-      run: |
-       sudo apt-get update
-       sudo apt-get install -y mailutils
-
   notification:     
 
    needs: test
@@ -81,7 +75,4 @@ jobs:
    steps:
     - uses: actions/checkout@v4
     - name: notification
-      run: |
-       cd ..
-       chmod +x .github/scripts/sendEmail.sh # Adiciona permissão
-       .github/scripts/sendEmail.sh         # Executa o script
+      run: sh scripts/sendEmail.sh
