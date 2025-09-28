@@ -66,6 +66,12 @@ jobs:
         name: test report
         path: ci/target/site/
 
+
+    - name: Install Mail Utilities
+      run: |
+       sudo apt-get update
+       sudo apt-get install -y mailutils
+
   notification:     
 
    needs: test
