@@ -60,9 +60,10 @@ public class ConversorTest {
         assertEquals(1832.0, conversor.celsiusParaFahrenheit(1000), DELTA);
     }
 
-    @Test // 9/20: Valor muito baixo
+    @Test 
     public void testC_500_ExtremoBaixo() {
-        assertEquals(-870.0, conversor.celsiusParaFahrenheit(-500), DELTA);
+    // O valor correto é -868.0, não -870.0
+        assertEquals(-868.0, conversor.celsiusParaFahrenheit(-500), DELTA); 
     }
 
     @Test // 10/20: Teste com zero (garante que 0 não falhe)
